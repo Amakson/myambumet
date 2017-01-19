@@ -83,11 +83,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="http://ambu-net.com/">providers</a>
-                    <a href="http://ambu-net.com/">medics</a>
-                    <a href="http://ambu-net.com/">public</a>
-                    <a href="http://myambunet.com/">contact</a>
-                    <a href="http://ambu-net.com/">home</a>
+                    <a href="http://ambu-net.com/">open schedules</a>
+                    <a href="http://ambu-net.com/">available medics</a>
+                    <a href="{{url('/login')}}">Login</a>
+                    <a href="{{url('/register')}}">Register</a>
                 </div>
             </div>
         </div>

@@ -13,7 +13,8 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-
+    <!-- jquerry link -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -36,15 +37,16 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'myambunet') }}
+                    <a class="navbar-brand" href="{{ url('/openschedule') }}">
+                    myambunet
+                        <!--{{ config('app.name', 'myambunet') }}-->
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <!--<li><a href="{{ url('/openschedule') }}">Open Schedules</a></li>-->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -84,5 +86,17 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+  <script>
+  $(function() {
+    $( "#datepicker2" ).datepicker();
+  });
+  </script>
 </body>
 </html>

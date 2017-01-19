@@ -21,3 +21,7 @@ Route::get('/Contact', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/openschedule', 'OpenscheduleController@index');
+Route::get('/openschedule/create', 'OpenscheduleController@create');
+Route::post('/openschedule/store', 'OpenscheduleController@store');
+Route::get('/openschedule/{id}', 'OpenscheduleController@show');
