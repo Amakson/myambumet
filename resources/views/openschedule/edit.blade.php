@@ -6,17 +6,17 @@
 <main class="container-fluid">
     <div class="container-fluid">
         <div class="jumbotron">
-            <h2>Create Schedules</h2>
+            <h2>Edit Schedules</h2>
         </div>   
-        <div class="col-sm-12 custyle">
-        {!! Form::open(['method' => 'POST', 'action' => 'OpenscheduleController@store']) !!}
+        <div class="col-sm-12">
+        {!! Form::model($openschedule, ['method' => 'PATCH', 'action' => ['OpenscheduleController@update', $openschedule->id]]) !!}
             <div class="form-group">
-                @include('partials.error-message')
                 {!! Form::label("title", "Title ") !!}
                 {!! Form::text("title", null, ['class' => 'form-control']) !!}
             </div>
             
              <div class="form-group">
+                @include('partials.error-message')
                 {!! Form::label("type", "Type ") !!}
                 {!! Form::select('type', [
                                           'Runs' => 'Runs/Calls', 
@@ -36,10 +36,17 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit("Create Schedule", ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit("Edit Schedule", ['class' => 'btn btn-primary']) !!}
             </div>
         {!! Form::close() !!}
 
+        {!! Form::open(['method' => 'DELETE', 'action' => ['OpenscheduleController@destroy', $openschedule->id]]) !!}
+            <div>
+                {!! form::submit("Delete Schedule", ['class' => 'btn btn-danger']) !!}
+            
+            
+            </div>
+        {!! Form::close() !!}    
         </div>
     </div>
 </main>

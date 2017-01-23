@@ -37,7 +37,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/openschedule') }}">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                     myambunet
                         <!--{{ config('app.name', 'myambunet') }}-->
                     </a>
@@ -46,7 +46,7 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <!--<li><a href="{{ url('/openschedule') }}">Open Schedules</a></li>-->
+                        <!-- -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
