@@ -26,6 +26,8 @@
             @endif
         </div>
         @endif
+
+        <br>
         <div class="content">
          <div>
             {{-- <div class="table-title"> --}}

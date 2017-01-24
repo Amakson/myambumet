@@ -243,3 +243,6 @@ span{
 #Connections{
   color: #fff;
 }
+.panel{
+  border-radius: 15px;
+}
