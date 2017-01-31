@@ -5,13 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Openschedule;
 use Session;
+use App\Http\Requests;
+// use App\Category;
+//use App\Photo;
+//use Carbon\Carbon;
+//use Image;
+use App\User;
 
 
 class OpenscheduleController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('admin', ['except' => ['index', 'show']]);
+    // }
     public function __construct()
     {
-        $this->middleware('admin', ['except' => ['index', 'show']]);
+        $this->middleware('admin', ['only' => ['create', 'store', 'edit', 'update']]);
+        $this->middleware('admin', ['only' => ['publish', 'destroy', 'bin', 'restore', 'destroyOpenschedule']]);
     }
 
     public function index()
@@ -114,4 +125,12 @@ class OpenscheduleController extends Controller
         $destroySchedule->forceDelete($destroySchedule);
         return back();
     }
+
+    public function publish(Request $request, $id)
+    {
+        $input = $request->all();
+        $openschedule = Openschedule::findOrFail($id);
+        $openschedule->update($input);
+        return redirect ('admin');
+    }   
 }

@@ -16,11 +16,6 @@
             </div>
             @endif
 
-            @foreach ($openschedules as $openschedule)
-
-            <article>
-                <h2><a href="{{ action('OpenscheduleController@show', [$openschedule->id]) }}"></h2>
-            </article>
             <div class="table-responsive">
 
                 <table class="table table-hover table-striped custab">
@@ -33,16 +28,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($openschedules as $openschedule)
+                            
                         <tr>
-                            <td>{{ $openschedule->title }}</td>
+                            <td><button class="btn btn-primary"><a style="color:#fff; text-decoration:none;" href="{{ action('OpenscheduleController@show', [$openschedule->id]) }}">View</a></button>  {{ $openschedule->title }}</td>
                             <td>{{ $openschedule->type }}</td>
                             <td>{{ $openschedule->start_time }}</td>
                             <td>{{ $openschedule->end_time }}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 {{-- </div> --}}
-                @endforeach
+                
 
         </div>
     </div>

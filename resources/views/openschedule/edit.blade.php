@@ -14,39 +14,43 @@
                 {!! Form::label("title", "Title ") !!}
                 {!! Form::text("title", null, ['class' => 'form-control']) !!}
             </div>
-            
-             <div class="form-group">
                 @include('partials.error-message')
-                {!! Form::label("type", "Type ") !!}
-                {!! Form::select('type', [
-                                          'Runs' => 'Runs/Calls', 
-                                          'Full-Day' => 'Full Day', 
-                                          'Full-Time' => 'Full Time'], null, ['placeholder' => 'Pick a type...'], ['class' => 'form-control']) !!}
-                      
-            </div>
+                  <div>
+                        <label for="type">Type</label>
+                            <select class="form-control" name="type" id="">
+                                <option value="" disabled selected>Pick a type...</option>
+                                <option value="Runs">Runs/Calls</option>
+                                <option value="Full-Day">Full Day</option>
+                                <option value="Full-Time MWF">Full Time MMF</option>
+                                <option value="Full-Time TTS">Full Time TTS</option>
+                                <option value="Full-Time Variable">Full Time Variable</option>
+                            </select>
+                     </div> 
 
-             <div class="form-group">
-                {!! Form::label('start_time', 'Start Time ') !!}
-                {!! Form::text('start_time', '', array('id' => 'datepicker'), ['class' => 'form-control']) !!}
-            </div>
+                     <div>
+                        <label for="start_time">Start Time</label>
+                        <input type="text" name="start_time" class="form-control" id="datepicker">
+                     </div>  
 
-             <div class="form-group">
-                {!! Form::label('end_time', 'End Time ') !!}
-                {!! Form::text('end_time', '', array('id' => 'datepicker2'), ['class' => 'form-control']) !!}
-            </div>
+                     <div>
+                        <label for="end_time">End Time</label>
+                        <input type="text" name="end_time" class="form-control" id="datepicker2">
+                     </div>    
+
+            <br>
 
             <div class="form-group">
                 {!! Form::submit("Edit Schedule", ['class' => 'btn btn-primary']) !!}
             </div>
         {!! Form::close() !!}
 
+        {{-- Delete Schedule --}}
         {!! Form::open(['method' => 'DELETE', 'action' => ['OpenscheduleController@destroy', $openschedule->id]]) !!}
-            <div>
+            <div class="form-group">
                 {!! form::submit("Delete Schedule", ['class' => 'btn btn-danger']) !!}
-            
-            
             </div>
-        {!! Form::close() !!}    
+        {!! Form::close() !!}  
+
         </div>
     </div>
 </main>

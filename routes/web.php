@@ -18,6 +18,14 @@ Route::get('/Contact', function () {
     return view('welcome');
 });
 
+// View::share('c', App\Category::latest()->get()); // c stands for category
+// View::share('user', App\User::all());
+View::share('openschedule', App\Openschedule::all());
+View::share('user', App\User::all());
+
+// Route::get('/', ['as' => '/', 'uses' => 'OpenscheduleController@index']);
+Route::patch('/openschedule/{id}', 'OpenscheduleController@publish');
+
 Auth::routes();
 
 Route::get('/logout', 'Auth\LoginController@logout');
@@ -35,7 +43,11 @@ Route::patch('/openschedule/{id}', 'OpenscheduleController@update');
 Route::delete('/openschedule/{id}', 'OpenscheduleController@destroy');
 
 
+
+
 Route::get('admin', 'AdminController@index');
+Route::get('medic', 'MedicController@index');
+Route::get('provider', 'ProviderController@index');
 
 
 

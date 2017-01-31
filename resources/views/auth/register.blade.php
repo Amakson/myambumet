@@ -60,6 +60,18 @@
                             </div>
                         </div>
 
+                        {{-- Accept Terms and Condition --}}
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : ''}}> <a href="/home"> Accept Terms And Conditions</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
