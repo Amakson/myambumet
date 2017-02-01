@@ -14,7 +14,6 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    {{--  <link href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100)" rel="stylesheet" type="text/css"> --}}
 </head>
 <body id="welcome">
 
@@ -72,7 +71,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="text-left col-md-4"><a class="thHeadLink" style="color:#fff;" href="http://ambu-net.com/">Available Medics</a></th>
+                            <th class="text-left col-md-4"><a class="thHeadLink" style="color:#fff;" href="{{url('/availablemedics')}}">Available Medics</a></th>
                         </tr>
                     </thead>
                     <tbody class="table-hover">
@@ -116,7 +115,7 @@
     <div class="middle" id="middle">
         <div class="container-fluid">
             <div class="row">
-                <div id="loader">
+                <div id="{{-- loader --}}">
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
@@ -201,7 +200,7 @@
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> ABOUT US </h3>
                     <ul>
-                        <li><a href="http://www.ambu-net.com">Company</a></li>
+                        <li><a href="http://www.ambu-net.com" target="_blank">Company</a></li>
                         <li> <a href="#"></a>FAQ</li>
                         <li> <a href="#"> Subscription </a> </li>
                         <li> <a href="#"> Billing </a> </li>
@@ -254,13 +253,6 @@
                             </div>
                         </li> --}}
                     </ul>
-{{--                     <ul class="social">
-                        <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                    </ul> --}}
                 </div>
             </div>
             <!--/.row--> 

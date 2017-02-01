@@ -33,6 +33,7 @@
                             <th class="col-md-2">End Time</th>
                             </tr>
                         </thead>
+                            <tbody>
                             @foreach ($openschedule as $openschedule)
                                 {{ Form::model($openschedule, ['method' => 'PATCH', 'action' => ['OpenscheduleController@publish', $openschedule->id]]) }}
                                     @include('partials.error-message')

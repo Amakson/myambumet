@@ -49,5 +49,7 @@ Route::get('admin', 'AdminController@index');
 Route::get('medic', 'MedicController@index');
 Route::get('provider', 'ProviderController@index');
 
+Route::resource('availablemedics', 'AvailablemedicController');
+
 
 

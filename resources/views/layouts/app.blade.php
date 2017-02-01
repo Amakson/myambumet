@@ -42,6 +42,9 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                     myambunet
+                    {{-- <a class="navbar-brand" rel="home" href="#" title="Buy Sell Rent Everyting">
+                <img style="max-width:100px; margin-top: -7px;"
+                     src="//www.google.com/favicon.ico"> --}}
                         <!--{{ config('app.name', 'myambunet') }}-->
                     </a>
                 </div>
@@ -75,6 +78,9 @@
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
+                                    </li>
+                                    <li>
+                                        <a href="{{ url('/medic') }}"></a>
                                     </li>
                                 </ul>
                             </li>

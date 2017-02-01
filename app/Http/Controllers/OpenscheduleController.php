@@ -23,6 +23,7 @@ class OpenscheduleController extends Controller
     {
         $this->middleware('admin', ['only' => ['create', 'store', 'edit', 'update']]);
         $this->middleware('admin', ['only' => ['publish', 'destroy', 'bin', 'restore', 'destroyOpenschedule']]);
+        $this->middleware('auth', ['only' => ['index']]);
     }
 
     public function index()

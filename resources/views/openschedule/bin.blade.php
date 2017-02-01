@@ -7,12 +7,29 @@
             <h2>Deleted Schedules</h2>
         </div>   
         <div class="col-sm-12">
-            @foreach ($deletedSchedules as $openschedule)  
-                <article>
-                    <h2>TITLE: {{ $openschedule->title }}</h2>
-                    <p>TYPE: {{ $openschedule->type }}</p>
-                    <p>START TIME: {{ $openschedule->start_time }}</p>
-                    <p>END TIME: {{ $openschedule->end_time }}</p>
+            
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th class="col-md-6">Title</th>
+                            <th class="col-md-2">Type</th>
+                            <th class="col-md-2">Start Time</th>
+                            <th class="col-md-2">End Time</th>
+                            </tr>
+                        </thead> 
+                            <tbody>
+                         @foreach ($deletedSchedules as $openschedule)
+
+                      
+                    
+                {{-- <article> --}}
+                    <h2>Title {{ $openschedule->title }}</h2>
+                    <p>Type {{ $openschedule->type }}</p>
+                    <p>Start Time {{ $openschedule->start_time }}</p>
+                    <p>End Time {{ $openschedule->end_time }}</p>
+
+
                     {!! Form::open(['method' => 'GET', 'action' => ['OpenscheduleController@restore', $openschedule->id]])  !!}
                         <div class="form-group">
                             {!! form::submit("Restore Schedules", ['class' => 'btn btn-primary']) !!}
@@ -24,9 +41,11 @@
                             {!! form::submit("Destroy Schedule", ['class' => 'btn btn-danger']) !!}
                         </div>
                      {!! Form::close() !!}   
-                </article>
-          @endforeach
-
+                {{-- </article> --}}
+                        @endforeach
+            </tbody>
+            </table>  
+            </div> 
         </div>
     </div>
 </main>
