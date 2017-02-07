@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Availablemedic;
+use Session;
 
 class AvailablemedicController extends Controller
 {
@@ -13,7 +16,9 @@ class AvailablemedicController extends Controller
      */
     public function index()
     {
-        return view('availablemedics.index');
+        //return view('availablemedics.index');
+        $availablemedics = Availablemedic::latest()->get();
+        return view('availablemedics.index', compact('availablemedics'));
     }
 
     /**
@@ -23,7 +28,9 @@ class AvailablemedicController extends Controller
      */
     public function create()
     {
-        //
+        Session::flash('flash_message', 'You have created a schedule');
+        return view('availablemedics.create');
+        // return redirect('openschedule');
     }
 
     /**
@@ -34,7 +41,9 @@ class AvailablemedicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $input = $request->all();
+        Availablemedic::create($input);
+        return redirect('availablemedics');
     }
 
     /**
@@ -45,7 +54,8 @@ class AvailablemedicController extends Controller
      */
     public function show($id)
     {
-        //
+        $availablemedics =  Availablemedic::findOrFail($id);
+        return view('availablemedics.show', compact('availablemedics'));
     }
 
     /**
@@ -56,9 +66,10 @@ class AvailablemedicController extends Controller
      */
     public function edit($id)
     {
-        //
+         $availablemedics =  Availablemedic::findOrFail($id);
+        return view('availablemedics.edit', compact('availablemedics'));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -68,7 +79,10 @@ class AvailablemedicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $availablemedics = Openschedule::findOrFail($id);  
+        $availablemedics->update($input);
+        return redirect('availablemedics');
     }
 
     /**

@@ -1,65 +1,14 @@
 @extends('layouts.app')
 @section('content')
-<!--search box-->
-<div class="container-fluid">
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" role="dialog">
-		<div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">×</button>
-					<h4 class="modal-title">Search Section</h4>
-				</div>
-				<div class="modal-body">
-
-					<section class="search-box1" id="panel">
-						<div class="container-fluid">
-							<form class="form-inline" role="form">
-								<div class="col-sm-8 col-xs-8 form-group top_search" style="padding-right:0px;">
-									<div class="row">
-										<label class="sr-only" for="search">Search here...</label>
-										<span class="serach-footer"><img src="images/srch.png" /></span>
-										<input type="text" class="form-control search-wrap" id="search" placeholder="Search here...">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-4 col-xs-4 form-group top_search" style="padding-left:0px;">
-										<button type="submit" class="btn btn-default search-btn">SEARCH</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</section>
-
-
-
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-</div>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-
-
-
-
-
+	
+	
+    {!! $calendar->calendar() !!}
+    {!! $calendar->script() !!}
+  	
 
 <section>
 
-	<div class="container-fluid" style="margin-top: 30px;">
+	<div class="container-fluid" style="margin-top: -19px;">
 		<div class="profile-head">
 			<div class="col-md- col-sm-4 col-xs-12">
 				<img src="http://www.newlifefamilychiropractic.net/wp-content/uploads/2014/07/300x300.gif" class="img-responsive" />
@@ -74,17 +23,14 @@
 					{{-- <li><span class="glyphicon glyphicon-briefcase"></span> 5 years</li> --}}
 					<li><span class="glyphicon glyphicon-map-marker"></span> Katy TX</li>
 					<li><span class="glyphicon glyphicon-envelope"></span><a href="#" title="mail">solaadele@gmail.com</a></li>
-					<li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(281) 956 789123</a></li>
+					<li><span class="glyphicon glyphicon-phone"></span> <a href="#" title="call">(281) 956 78923</a></li>
 					<li><span class="glyphicon glyphicon-list"></span> <a href="#" title="call">EMT - I</a></li>
 					<li><span class="glyphicon glyphicon-tags"></span> <a href="#" title="call">LI123456</a></li>
-
+					<li><span class="glyphicon glyphicon-time"></span> <a href="#" title="call">Since 2012</a></li>
 				</ul>
 
 
 			</div><!--col-md-8 col-sm-8 col-xs-12 close-->
-
-
-
 
 		</div><!--profile-head close-->
 	</div><!--container close-->
@@ -101,7 +47,7 @@
 			</li>
 			<li><a href="#change" role="tab" data-toggle="tab">
 				<i class="fa fa-key"></i> Edit Profile
-			</a>
+				</a>
 		</li>
 	</ul><!--nav-tabs close-->
 
@@ -126,6 +72,14 @@
 								<table class="table bio-table">
 									<tbody>
 										<tr>  
+											<td>Username</td>
+											<td>: Pasholly</td> 
+										</tr>
+										<tr>  
+											<td>Location</td>
+											<td>: Katy, TX</td> 
+										</tr>
+										<tr>  
 											<td>Emai Id</td>
 											<td>: solaadele@gmail.com</td> 
 										</tr>
@@ -134,22 +88,24 @@
 											<td>: (281) 456 789</td>       
 										</tr>
 										<tr>    
-											<td>Phone</td>
-											<td>: (281) 956 789123</td>       
-										</tr>
-										<tr>    
-											<td>Experience</td>
-											<td>: 5 years</td>       
+											<td>Level</td>
+											<td>: EMT -I</td>       
 										</tr>
 										<tr>
 											<td>Licence #</td>
-											<td>LI123456</td> 
+											<td>: LI123456</td> 
+										</tr>
+										<tr>    
+											<td>Experience</td>
+											<td>: Since 2012</td>       
 										</tr>
 
 									</tbody>
 								</table>
 							</div><!--table-responsive close-->
 						</div><!--col-md-6 close-->
+
+
 
 						<div class="col-md-6">
 

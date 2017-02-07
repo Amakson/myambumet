@@ -19,29 +19,14 @@
                             </tr>
                         </thead> 
                             <tbody>
-                         @foreach ($deletedSchedules as $openschedule)
-
-                      
-                    
-                {{-- <article> --}}
-                    <h2>Title {{ $openschedule->title }}</h2>
-                    <p>Type {{ $openschedule->type }}</p>
-                    <p>Start Time {{ $openschedule->start_time }}</p>
-                    <p>End Time {{ $openschedule->end_time }}</p>
-
-
-                    {!! Form::open(['method' => 'GET', 'action' => ['OpenscheduleController@restore', $openschedule->id]])  !!}
-                        <div class="form-group">
-                            {!! form::submit("Restore Schedules", ['class' => 'btn btn-primary']) !!}
-                        </div>
-                     {!! Form::close() !!} 
-
-                     {!! Form::open(['method' => 'DELETE', 'action' => ['OpenscheduleController@destroySchedule', $openschedule->id]])  !!}
-                        <div class="form-group">
-                            {!! form::submit("Destroy Schedule", ['class' => 'btn btn-danger']) !!}
-                        </div>
-                     {!! Form::close() !!}   
-                {{-- </article> --}}
+                         @foreach ($deletedSchedules as $openschedule) 
+                             <tr>
+                                <td> <button class="btn btn-primary btn-xs"> <a style="color:#fff; text-decoration:none;" href="{{ action('OpenscheduleController@restore', [$openschedule->id])  }}">Restore Schedule</a> </button>
+                                <button class="btn btn-danger btn-xs"><a style="color:#fff; text-decoration:none;" href=" {{ action('OpenscheduleController@destroySchedule', [$openschedule->id]) }}">Destroy Schedule</a></button> {{ $openschedule->title }}</td>
+                                <td>{{ $openschedule->type }}</td>
+                                <td>{{ $openschedule->start_time }}</td>
+                                <td>{{ $openschedule->end_time }}</td>
+                            </tr>     
                         @endforeach
             </tbody>
             </table>  

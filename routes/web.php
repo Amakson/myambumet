@@ -20,7 +20,9 @@ Route::get('/Contact', function () {
 
 // View::share('c', App\Category::latest()->get()); // c stands for category
 // View::share('user', App\User::all());
+View::share('availablemedics', App\Availablemedic::all());
 View::share('openschedule', App\Openschedule::all());
+
 View::share('user', App\User::all());
 
 // Route::get('/', ['as' => '/', 'uses' => 'OpenscheduleController@index']);

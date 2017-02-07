@@ -21,23 +21,21 @@
                 <table class="table table-hover table-striped custab">
                     <thead>
                         <tr>
-                            <th class="col-md-4">Username</th>
-                            <th class="col-md-4">Level</th>
+                            <th class="col-md-6">Username</th>
+                            <th class="col-md-2">Level</th>
                             <th class="col-md-4">Location</th>
                            {{--  <th class="col-md-2">End Time</th> --}}
                         </tr>
                     </thead>
-                    {{-- <tbody>
-                        @foreach ($availablemedic as $availablemedic)
-                            
+                    <tbody>
+                        @foreach ($availablemedics as $availablemedic)    
                         <tr>
-                            <td><button class="btn btn-primary"><a style="color:#fff; text-decoration:none;" href="{{ action('AvailablemedicController@show', [$availablemedic->id]) }}">View</a></button>  {{ $availablemedic->title }}</td>
-                            <td>{{ $availablemedic->username }}</td>
-                            <td>{{ $availablemedic->start_time }}</td>
-                            <td>{{ $availablemedic->end_time }}</td>
+                            <td><button class="btn btn-primary"><a style="color:#fff; text-decoration:none;" href="{{ action('AvailablemedicController@show', [$availablemedic->id]) }}">View</a></button>  {{ $availablemedic->Username }}</td>
+                            <td>{{ $availablemedic->Level }}</td>
+                            <td>{{ $availablemedic->Location }}</td>
                         </tr>
                         @endforeach
-                    </tbody> --}}
+                    </tbody>
                 </table>
                 {{-- </div> --}}
                 
@@ -45,4 +43,5 @@
         </div>
     </div>
 </main>
+
 @endsection
