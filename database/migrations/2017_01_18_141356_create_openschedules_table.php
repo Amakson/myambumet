@@ -13,7 +13,7 @@ class CreateOpenschedulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('openschedules', function (Blueprint $table) {
+        Schema::table('openschedules', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('type');

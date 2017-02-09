@@ -25,7 +25,7 @@ class AddDeletedAtColumnToOpenschedulesTable extends Migration
      */
     public function down()
     {
-        Schema::create('openschedules', function (Blueprint $table) {
+        Schema::table('openschedules', function (Blueprint $table) {
             $table->dropColumn('deleted_at');
         });
     }
